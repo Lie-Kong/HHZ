@@ -6,7 +6,7 @@ import 'package:hiddify/features/panel/xboard/services/http_service/domain_servi
 import 'package:http/http.dart' as http;
 
 class HttpService {
-  static String baseUrl = ''; // 替换为你的实际基础 URL
+  static String baseUrl = 'https://xboard.lie-kong.top/'; // 替换为你的实际基础 URL
   // 初始化服务并设置动态域名
   static Future<void> initialize() async {
     baseUrl = await DomainService.fetchValidDomain();
