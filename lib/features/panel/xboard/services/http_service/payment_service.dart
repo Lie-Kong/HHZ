@@ -7,7 +7,7 @@ class PaymentService {
   Future<Map<String, dynamic>> submitOrder(
       String tradeNo, String method, String accessToken,) async {
     return await _httpService.postRequest(
-      "/api/v1/user/order/checkout",
+      "/api/v2/user/order/checkout",
       {"trade_no": tradeNo, "method": method},
       headers: {'Authorization': accessToken},
     );
@@ -15,7 +15,7 @@ class PaymentService {
 
   Future<List<dynamic>> getPaymentMethods(String accessToken) async {
     final response = await _httpService.getRequest(
-      "/api/v1/user/order/getPaymentMethod",
+      "/api/v2/user/order/getPaymentMethod",
       headers: {'Authorization': accessToken},
     );
     return (response['data'] as List).cast<dynamic>();

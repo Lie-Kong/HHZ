@@ -44,7 +44,7 @@ class DomainService {
   static Future<bool> _checkDomainAccessibility(String domain) async {
     try {
       final response = await http
-          .get(Uri.parse('$domain/api/v1/guest/comm/config'))
+          .get(Uri.parse('$domain/api/v2/guest/comm/config'))
           .timeout(const Duration(seconds: 15));
 
       return response.statusCode == 200;

@@ -6,7 +6,7 @@ class AuthService {
 
   Future<Map<String, dynamic>> login(String email, String password) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/auth/login",
+      "/api/v2/passport/auth/login",
       {"email": email, "password": password},
       requiresHeaders: false,
     );
@@ -15,7 +15,7 @@ class AuthService {
   Future<Map<String, dynamic>> register(String email, String password,
       String inviteCode, String emailCode) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/auth/register",
+      "/api/v2/passport/auth/register",
       {
         "email": email,
         "password": password,
@@ -27,7 +27,7 @@ class AuthService {
 
   Future<Map<String, dynamic>> sendVerificationCode(String email) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/comm/sendEmailVerify",
+      "/api/v2/passport/comm/sendEmailVerify",
       {'email': email},
     );
   }
@@ -35,7 +35,7 @@ class AuthService {
   Future<Map<String, dynamic>> resetPassword(
       String email, String password, String emailCode) async {
     return await _httpService.postRequest(
-      "/api/v1/passport/auth/forget",
+      "/api/v2/passport/auth/forget",
       {
         "email": email,
         "password": password,

@@ -7,7 +7,7 @@ class SubscriptionService {
   // 获取订阅链接的方法
   Future<String?> getSubscriptionLink(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/getSubscribe",
+      "/api/v2/user/getSubscribe",
       headers: {
         'Authorization': accessToken,
       },
@@ -27,7 +27,7 @@ class SubscriptionService {
   // 重置订阅链接的方法
   Future<String?> resetSubscriptionLink(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/resetSecurity",
+      "/api/v2/user/resetSecurity",
       headers: {
         'Authorization': accessToken,
       },

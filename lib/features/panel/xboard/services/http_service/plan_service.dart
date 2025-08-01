@@ -8,7 +8,7 @@ class PlanService {
 
   Future<List<Plan>> fetchPlanData(String accessToken) async {
     final result = await _httpService.getRequest(
-      "/api/v1/user/plan/fetch",
+      "/api/v2/user/plan/fetch",
       headers: {'Authorization': accessToken},
     );
     return (result["data"] as List)
