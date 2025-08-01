@@ -25,7 +25,7 @@ class HttpService {
             url,
             headers: headers,
           )
-          .timeout(const Duration(seconds: 20)); // 设置超时时间
+          .timeout(const Duration(seconds: 5)); // 设置超时时间
 
       if (kDebugMode) {
         print("GET $baseUrl$endpoint response: ${response.body}");
