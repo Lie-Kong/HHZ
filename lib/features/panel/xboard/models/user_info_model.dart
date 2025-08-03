@@ -1,31 +1,31 @@
 class UserInfo {
-  final int balance;
-  final int commissionBalance;
-  final String? expiryDate;
-  final String? joinDate;
-  final bool isActive;
-  final String? inviteCode;
-  
-  UserInfo({
-    required this.balance,
-    required this.commissionBalance,
-    this.expiryDate,
-    this.joinDate,
-    required this.isActive,
-    this.inviteCode,
-  });
+  final String email;
+  final double transferEnable;
+  final int? lastLoginAt; // 允许为 null
+  final int createdAt;
+  final bool banned; // 账户状态, true: 被封禁, false: 正常
+  final bool remindExpire;
+  final bool remindTraffic;
+  final int? expiredAt; // 允许为 null
+  final double balance; // 消费余额
+  final double commissionBalance; // 剩余佣金余额
+  final int planId;
+  final double? discount; // 允许为 null
+  final double? commissionRate; // 允许为 null
+  final String? telegramId; // 允许为 null
+  final String uuid;
+  final String avatarUrl;
 
-  factory UserInfo.fromJson(Map<String, dynamic> json) {
-    return UserInfo(
-      balance: json['balance'] as int? ?? 0,
-      commissionBalance: json['commission_balance'] as int? ?? 0,
-      expiryDate: json['expiry_date'] as String?,
-      joinDate: json['join_date'] as String?,
-      isActive: json['is_active'] as bool? ?? false,
-      inviteCode: json['invite_code'] as String?,
-    );
-  }
-}
+  UserInfo({
+    required this.email,
+    required this.transferEnable,
+    this.lastLoginAt,
+    required this.createdAt,
+    required this.banned,
+    required this.remindExpire,
+    required this.remindTraffic,
+    this.expiredAt,
+    required this.balance,
     required this.commissionBalance,
     required this.planId,
     this.discount,
